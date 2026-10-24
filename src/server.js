@@ -1,6 +1,7 @@
 import { createApp } from "./app.js";
 import { config } from "./config.js";
-const app = createApp();
+import { getPool } from "./db.js";
+const app = createApp({ db: getPool() });
 // 0.0.0.0 = listen on every interface. Inside a container this is required,
 // otherwise the published port (-p) has nothing to connect to.
 const server = app.listen(config.port, "0.0.0.0", () => {
@@ -11,8 +12,4 @@ const server = app.listen(config.port, "0.0.0.0", () => {
 process.on("SIGTERM", () => {
   console.log("SIGTERM received, shutting down");
   server.close(() => process.exit(0));
-});
-
-server.on("error", (err) => {
-  console.error("Server failed to start:", err.code, err.message);
 });

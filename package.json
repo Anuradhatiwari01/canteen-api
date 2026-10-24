@@ -1,0 +1,39 @@
+{
+  "name": "canteen-api",
+  "version": "1.0.0",
+  "description": "Order food from the campus canteedn. Practice project for BCS5031.",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "lint": "eslint .",
+    "test": "vitest run tests/unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anuradhatiwari01/canteen-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anuradhatiwari01/canteen-api/issues"
+  },
+  "homepage": "https://github.com/Anuradhatiwari01/canteen-api#readme",
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "supertest": "^7.3.1",
+    "vitest": "^5.0.5"
+  }
+}
